@@ -1,0 +1,233 @@
+/* assets/css/layout.css */
+
+/* Container padrão */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Sistema de grid 12 colunas (para usar onde precisar) */
+.grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--space-16);
+}
+
+/* Exemplo de colunas (se quiser usar depois) */
+.col-span-4 {
+    grid-column: span 4;
+}
+
+.col-span-6 {
+    grid-column: span 6;
+}
+
+.col-span-12 {
+    grid-column: span 12;
+}
+
+/* Header */
+header {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+    .logo-area img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        margin-right: 0.5rem;
+    }
+
+.logo-text {
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* Menu principal (layout) */
+.menu {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Hero */
+.hero {
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: var(--space-48) 0;
+}
+
+.hero-small {
+    padding: var(--space-32) 0;
+}
+
+.hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-32);
+}
+
+.hero-text {
+    flex: 1 1 280px;
+}
+
+    .hero-text h1 {
+        font-size: var(--fs-xxl);
+        margin-bottom: var(--space-16);
+    }
+
+    .hero-text p {
+        margin-bottom: var(--space-24);
+    }
+
+.hero-image {
+    flex: 1 1 260px;
+}
+
+    .hero-image img {
+        border-radius: var(--radius-lg);
+    }
+
+/* Seções */
+.section {
+    padding: var(--space-40, 2.5rem) 0;
+    background-color: var(--color-bg);
+}
+
+.section-alt {
+    background-color: var(--color-surface);
+}
+
+.section-header {
+    margin-bottom: var(--space-24);
+    padding: 5px;
+}
+
+    .section-header h2 {
+        font-size: 1.6rem;
+        color: var(--color-primary);
+    }
+
+/* Grids internos */
+.cards-grid {
+    display: grid;
+    gap: var(--space-24);
+}
+
+.equipe-grid {
+    display: grid;
+    gap: var(--space-24);
+}
+
+    .equipe-grid img {
+        border-radius: var(--radius-lg);
+    }
+
+.contato-grid,
+.doacao-grid,
+.duas-colunas {
+    display: grid;
+    gap: var(--space-24);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: var(--space-16) 0;
+    margin-top: var(--space-32);
+}
+
+.footer-content {
+    text-align: center;
+    font-size: var(--fs-sm);
+}
+
+    .footer-content a {
+        color: var(--color-accent);
+        text-decoration: underline;
+    }
+
+/* ---------- BREAKPOINTS (mínimo 5) ---------- */
+
+/* Muito pequenos (até 480px) */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: var(--fs-xl);
+    }
+}
+
+/* Celulares até 639px – seu comportamento antigo */
+@media (max-width: 639px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+    }
+
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .form-group-inline {
+        align-items: flex-start;
+    }
+}
+
+/* A partir de 640px – seu comportamento antigo + grid cards */
+@media (min-width: 640px) {
+    .cards-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .equipe-grid {
+        grid-template-columns: 1.2fr 1fr;
+    }
+
+    .contato-grid,
+    .doacao-grid,
+    .duas-colunas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Tablets (>= 768px) */
+@media (min-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.25rem;
+    }
+}
+
+/* Desktop médio (>= 1024px) */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+/* Desktop grande (>= 1280px) */
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1320px;
+    }
+}
